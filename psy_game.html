@@ -1,0 +1,537 @@
+<!DOCTYPE html> 
+<html>
+<body>
+<head>
+
+<style>
+
+body {
+    margin:0px;
+
+}
+
+.top_bckgroup{
+  position: absolute;
+
+  width:100% ;
+  height:80%;
+  background-color: pink;
+  max-width:30cm;
+  min-width:22cm;
+  
+  top: 0;  
+  bottom: 0;  
+  left: 0;  
+  right: 0; 
+  margin: auto;
+
+  
+
+
+}
+
+.start_bg{
+  position: absolute;
+
+  width:100% ;
+  height:80%;
+  background-color: pink;
+  max-width:30cm;
+  min-width:22cm;
+  
+  top: 0;  
+  bottom: 0;  
+  left: 0;  
+  right: 0; 
+  margin: auto;
+
+  z-index:200;
+
+}
+
+.End_bg{
+  position: absolute;
+
+  width:100% ;
+  height:80%;
+  background-color: pink;
+  max-width:30cm;
+  min-width:22cm;
+  
+  top: 0;  
+  bottom: 0;  
+  left: 0;  
+  right: 0; 
+  margin: auto;
+  opacity: 0;
+  z-index:400;
+  display:none;
+
+}
+
+img{
+  position: absolute;
+}
+
+.player1{
+position: absolute;
+bottom:28%;
+left:12% ;
+width : 40% ; 
+display:none;
+}
+.player2{
+position: absolute;
+bottom:28%;
+left:12% ;
+width : 35% ; 
+display:none;
+}
+.player3{
+position: absolute;
+bottom:28%;
+left:12% ;
+width : 40% ; 
+display:none;
+}
+
+
+.opponent1,.opponent2,.opponent3{
+position: absolute;
+bottom:60%;
+right:14% ;
+width : 30% ; 
+display:none;
+}
+
+.close_game{
+	position: absolute;
+
+	right: 2% ;
+	top:2%;
+	width :10% ; 
+	z-index:20;
+
+}
+
+.skill_1{
+  position: absolute;
+
+left: 0px ;
+top:0px;
+width :50% ; 
+height:50% ;
+
+}
+.skill_2{
+  position: absolute;
+right:0px ;
+top:0px;
+width : 50% ; 
+height:50% ;
+
+}
+.skill_3{
+  position: absolute;
+left:0px ;
+bottom:0px;
+width : 50% ; 
+height:50% ;
+
+}
+.skill_4{
+  position: absolute;
+right:0px ;
+bottom:0px;
+width : 50% ; 
+height:50% ;
+
+}
+
+.attack {
+  position: absolute;
+left:34% ;
+top:14%;
+width : 30% ; 
+height:50%;
+z-index:100;
+display:none;
+
+}
+
+.skill_block{
+position: absolute;
+bottom:2.1%;
+left:2.5% ;
+width : 95% ; 
+height:19.1% ;
+background-color:#FFFFFF ;
+
+
+
+}
+
+
+#intro_empty {
+position: absolute;
+bottom:2.1%;
+left:2.5% ;
+width : 95% ; 
+height:19.1% ;
+background-color:#FFFFFF ;
+z-index:30;
+display:none;
+}
+
+.intro_1, .intro_2 , .intro_3 , .intro_4 {
+position: absolute;
+bottom:2.1%;
+left:2.5% ;
+width : 95% ; 
+height:19.1% ;
+background-color:#FFFFFF ;
+z-index:29;
+display:none;
+}
+
+.words{
+    position: absolute;
+    color : #FFFFFF;
+    font-size:  160%;
+    font-weight:bold;
+
+
+	font-family:Microsoft JhengHei;
+	width : 80% ; 
+    height:100% ;
+	left: 10%;
+	
+}
+.player_info{
+position: absolute;
+bottom:21%;
+right:3.1% ;
+width : 36.3% ; 
+height:19.1% ;
+
+z-index:10;
+}
+
+#player_HP{
+position: absolute;
+top:45%;
+right:12% ;
+width : 68% ; 
+height : 15% ; 
+z-index:15;
+border-radius: 15px ;
+
+}
+
+
+
+#player_HP_value{
+position: absolute;
+top:45%;
+right:12% ;
+width : 68% ; 
+height : 15% ; 
+z-index:15;
+border-radius: 14px ;
+background-color:#4cc844 ;
+}
+
+.opponent_info{
+position: absolute;
+top:5%;
+left:3.1% ;
+width : 35% ; 
+height:19.1% ;
+z-index:10;
+}
+
+
+
+#opponent_HP{
+position: absolute;
+top:45%;
+right:17% ;
+width : 72% ; 
+height : 15% ; 
+z-index:15;
+border-radius: 15px ;
+}
+
+#opponent_HP_value{
+position: absolute;
+top:45%;
+right:17% ;
+width : 72% ; 
+height : 15% ; 
+z-index:15;
+border-radius: 14px ;
+background-color:#4cc844 ;
+}
+
+#opponent_name1,#opponent_name2,#opponent_name3{
+position: absolute;
+top:23%;
+left:10% ;
+width : 35% ; 
+height:19.1% ;
+z-index:10;
+display:none;
+}
+
+#player_name3,#player_name2{
+position: absolute;
+top:22%;
+left:13% ;
+width : 36.3% ; 
+height:21.1% ;
+
+z-index:10;
+display:none;
+
+}
+
+#player_name1{
+position: absolute;
+top:22%;
+left:16% ;
+width : 36.3% ; 
+height:21.1% ;
+
+z-index:10;
+display:none;
+}
+
+#start_1{
+position: absolute;
+top:50%;
+left:16% ;
+width : 25% ; 
+height:10% ;
+
+z-index:10;
+
+}
+#start_2{
+position: absolute;
+top:60%;
+left:16% ;
+width : 25% ; 
+height:10% ;
+
+z-index:10;
+
+}
+#start_3{
+position: absolute;
+top:70%;
+left:16% ;
+width : 25% ; 
+height:10% ;
+
+z-index:10;
+
+}
+
+#name{
+	position: absolute;
+	top:40%;
+	left:37% ;
+	width : 25% ; 
+	height:5%;
+	z-index:10;
+	font-size:28px;
+
+}
+
+.start_button1 {
+	position: absolute;
+	top:50%;
+	left:37.5% ;
+	width : 25% ; 
+
+	z-index:10;
+	background:    #76a5af;
+	background:    linear-gradient(#76a5af, #3d85c6);
+	border:        1px solid #556699;
+	border-radius: 1000px;
+	box-shadow:    0 4px #444444;
+	padding:       20px 45px;
+	color:         #ffffff;
+	display:       inline-block;
+	font:          normal bold 26px/1 "Open Sans", sans-serif;
+	text-align:    center;
+	font-family: Trebuchet MS;
+
+  }
+  .start_button2 {
+	position: absolute;
+	top:60%;
+	left:37.5% ;
+	width : 25% ; 
+
+
+	z-index:10;
+	background:    #76a5af;
+	background:    linear-gradient(#76a5af, #3d85c6);
+	border:        1px solid #556699;
+	border-radius: 1000px;
+	box-shadow:    0 4px #444444;
+	padding:       20px 45px;
+	color:         #ffffff;
+	display:       inline-block;
+	font:          normal bold 26px/1 "Open Sans", sans-serif;
+	text-align:    center;
+	font-family: Trebuchet MS;
+
+  }
+  .start_button3 {
+	position: absolute;
+	top:70%;
+	left:37.5% ;
+	width : 25% ; 
+
+
+	z-index:10;
+	background:    #76a5af;
+	background:    linear-gradient(#76a5af, #3d85c6);
+	border:        1px solid #556699;
+	border-radius: 1000px;
+	box-shadow:    0 4px #444444;
+	padding:       20px 45px;
+	color:         #ffffff;
+	display:       inline-block;
+	font:          normal bold 26px/1 "Open Sans", sans-serif;
+	text-align:    center;
+	font-family: Trebuchet MS;
+
+  }
+  
+
+#WIN{
+position: absolute;
+top:25%;
+left:25% ;
+width : 50% ; 
+height:50%;
+z-index:401;
+display:none ;
+
+}
+
+#LOSE{
+position: absolute;
+top:25%;
+left:25% ;
+width : 50% ; 
+height:50%;
+z-index:401;
+display:none ;
+}
+
+
+    
+</style>
+</head>
+
+<audio src="BGM.mp3" id="audio_BGM" loop="true" volume="0.1" ></audio>
+<audio src="Attack.mp3" id="audio_Attack" ></audio>
+<audio src="Win.mp3" id="audio_Win" ></audio>
+
+<div class="End_bg" ></div>
+
+
+
+<div class="start_bg">
+    <input type="text" id="name" placeholder="輸入名字" >
+    <img src="https://drive.google.com/uc?export=download&id=1KOdy73IL63umCXiOdDZhDky9I93h_ECt" width = 100% ; height=100% ;>
+	<button class = "start_button1" onclick = "game1()">Colimyci</button>
+	<button class = "start_button2" onclick = "game2()">Brosym</button>
+	<button class = "start_button3" onclick = "game3()">Cubicin</button>
+	
+	
+</div>
+
+<div class="top_bckgroup" >
+	<img id = "WIN" src="https://drive.google.com/uc?export=download&id=10mPT9EHFfus47NnQ3XV7-fNk3hkpz00v" onclick = "close_game()">
+	<img id = "LOSE" src="https://drive.google.com/uc?export=download&id=10mPT9EHFfus47NnQ3XV7-fNk3hkpz00v" onclick = "close_game()">
+	
+	
+	<img class = "attack" src="https://drive.google.com/uc?export=download&id=165rowyTRQD1om2UPDVTWwchYlB7twhOX">
+	<img class = "close_game" src="https://drive.google.com/uc?export=download&id=1GmAW8n9Hk6CqI_tr7EjevuM1oF1FOuv_"  onclick = "close_game()">
+	<img src="https://drive.google.com/uc?export=download&id=1wZ69uZv4Rr4ImfCo1lvl3lMtdPImligs" width = 100% ; height=100% ;>  
+
+	
+    <img class = "player1" src="https://drive.google.com/uc?export=download&id=1fhMJ-_4JtdAMTQbR3x09jPTZjup32Lnk">
+	<img class = "player2" src="https://drive.google.com/uc?export=download&id=1VU6NSlUFbmyCdiF1xhpPofFQB0itg5bI">
+	<img class = "player3" src="https://drive.google.com/uc?export=download&id=1RxyGHooI9ZZVobkSSkTzpB7BIUBEcmUu">
+    <div class = "player_info">
+
+	    <div  id="player_HP_value" ></div>
+		<img id = "player_name1" src="https://drive.google.com/uc?export=download&id=1bUP_59jMrdYaWm_Om4_T2h04U7wEmcvi" >
+		<img id = "player_name2" src="https://drive.google.com/uc?export=download&id=18JQvqRw9R_mj0E5uQTSOAE2mZ3ArN0Np" >
+		<img id = "player_name3" src="https://drive.google.com/uc?export=download&id=1ubp-oHTvpw26A5i_VMliKZH7tTmINxmE" >
+	    <img id = "player_HP" src="https://drive.google.com/uc?export=download&id=18IUJ69vzVkt4CPRuk1CyDnG0MKPV2ron" >
+	    <img src="https://drive.google.com/uc?export=download&id=1-MH7i29RdS90By5JyfUUqcjZeivILIci" width = 100% ; height=100% ;>
+	</div>
+	
+	
+    <img class = "opponent1" src="https://drive.google.com/uc?export=download&id=17KVdJSLVfuEVFcqdNB_NOrA1NXJW30ya">
+	<img class = "opponent2" src="https://drive.google.com/uc?export=download&id=1ayV45aTmUfDU0M4oR_ZLBiFvhG_d2uVO">
+	<img class = "opponent3" src="https://drive.google.com/uc?export=download&id=1F-7QwJ7M4Cxa8c104behtG69gb7y4gTt">
+	<div class = "opponent_info">
+
+		<div  id="opponent_HP_value" ></div>		
+	    <img id = "opponent_name1" src="https://drive.google.com/uc?export=download&id=1cOPJIUkJnUe8D2WK1orYZMGqB6k_P3My" >
+		<img id = "opponent_name2" src="https://drive.google.com/uc?export=download&id=1VbidsaiXuCkc71TPBT3Q1_3phaGlVR3J" >
+		<img id = "opponent_name3" src="https://drive.google.com/uc?export=download&id=1Qz4CSFFtY3kThD9zu98I6DiwaAjwzAl8" >
+		<img id = "opponent_HP" src="https://drive.google.com/uc?export=download&id=18IUJ69vzVkt4CPRuk1CyDnG0MKPV2ron" >
+	    <img src="https://drive.google.com/uc?export=download&id=1MW2PRMekIEMFGW97q51ry79ZEcx5gmKK" width = 100% ; height=100% ; >
+	</div>
+	
+	
+	<div id = "intro_empty"  onclick = "next_intro()"> </div>
+	<img class = "intro_1" src="https://drive.google.com/uc?export=download&id=1rAZsR2lcLjLZrZv7_M1_9KVDa8vVmvFl" onclick = "Endturn()" >
+	<img class = "intro_2" src="https://drive.google.com/uc?export=download&id=132B6OcPe66Sxd4Q6FP8Ct_9_-7Usn6RK" onclick = "Endturn()" >
+	<img class = "intro_3" src="https://drive.google.com/uc?export=download&id=1_TIIxgTims5lB824MXfTssh0vLyayV5w" onclick = "Endturn()" >
+	<img class = "intro_4" src="https://drive.google.com/uc?export=download&id=1pQ7ajqHZOcCpa7NW74WV03yex_BMx2h_" onclick = "Endturn()" >
+	
+	<div class = "skill_block" >
+	    
+		<div class = "skill_1" onclick = "use_skill1()">	
+		    <img  src="https://drive.google.com/uc?export=download&id=1DZKTRZkbIQWbqexYP0CHHQ-2r1Y6OOz7" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill_2" onclick = "use_skill2()">
+		    <img  src="https://drive.google.com/uc?export=download&id=13_yv6PKMVb5iHNvnIGn5MTvAgEt7PSdN" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill_3" onclick = "use_skill3()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1p7NPfHMgMkeFQnXS4_uvgYkUPDNNPwXs" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill_4" onclick = "use_skill4()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1lh020a1HdcKjsasbqIMhK2YR5q3RkwR2" width = 100% ; height=100% ;>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+<div class="background1" >
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+<script type="text/javascript" src="game_js.js"></script>
+</body>
+
+</html>
