@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+
+async  function loaded( id = -1 )
+{
+    data = {  } ;
+    const url = 'https://11a1gc6r7c.execute-api.ap-southeast-1.amazonaws.com/DemoDay/b4d66e0c7182c7980b7e6da2389630865a271e2c' ;
+    await fetch(url, {
+        method: 'POST',
+    
+        headers: new Headers({
+            'User-agent' : 'Mozilla/4.0 Custom User Agent',
+            'Content-Type': 'application/json',
+			'x-api-key' : 'CJzmxf3Qr476gb0BBVaZ74mO1hSp3f293IROQGMR'
+        })
+    }).then(function(response) {
+        if (response.status !== 200) {
+            console.log('Looks like there was a problem. Status Code: ' +
+            response.status);
+            return;
+        }
+
+      // Examine the text in the response
+        response.json().then( function(data){
+
+            for( item of data ) {
+			    var output_string = "<td>" + item["host_name"] + "</td><td>"+  item["name"] + "</td><td>"+ item["phone_num"] + "</td><td>"+item["score"] + "</td><td>"+ item["timestamp"] + "</td>" ;
+			    //document.getElementById('output').innerHTML  += output_string ;
+                //console.log( item );
+				
+				
+				var tab=document.getElementById('tab');
+				var tradd=tab.insertRow(1)
+				
+
+				tradd.innerHTML=output_string;
+
+			}
+
+        });
+
+    }).catch(function(err) {
+        console.log('Fetch Error :-S', err);
+    });
+}
+
+
+</script>
+
+<style>
+
+body {
+    margin:0px;
+
+}
+
+#tab{
+  position: absolute;
+
+  width:100% ;
+
+  background-color: pink;
+  font-size : 20px;
+  
+
+  z-index:200;
+
+}
+</style>
+</head>
+<body style = "background-color:#D1EDE1", onload="loaded()">
+<table id="tab" border="1">
+      <caption style ="font-size:50px;">分數排行榜</caption>
+
+     <tbody>
+         <tr>
+             <td>醫院</td>
+             <td>姓名</td>
+             <td>聯絡電話</td>
+			 <td>分數</td>
+			 <td>日期時間</td>
+         </tr>
+         
+         </tbody>
+
+     </table>
+
+</body>
+</html>
