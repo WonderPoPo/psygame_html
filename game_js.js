@@ -15,6 +15,7 @@ var audioDom2 = document.getElementById("audio_Win");
 audioDom2.volume = 1.0; 
 
 var score_counter = 0
+var sel_game = 0
 
 $( "*" ).on('click', function(){	
 	audioDom.play();
@@ -50,40 +51,80 @@ function reset_game(){
 	$("#opponent_name3").fadeOut(0);
 	
 	$("#intro_empty").fadeOut(0);
-	$("img.intro_1").fadeOut(0);
-	$("img.intro_2").fadeOut(0);
-	$("img.intro_3").fadeOut(0);
-	$("img.intro_4").fadeOut(0);
+	$("img.intro1_1").fadeOut(0);
+	$("img.intro1_2").fadeOut(0);
+	$("img.intro1_3").fadeOut(0);
+	$("img.intro1_4").fadeOut(0);
+	
+	$("img.intro2_1").fadeOut(0);
+	$("img.intro2_2").fadeOut(0);
+	$("img.intro2_3").fadeOut(0);
+	$("img.intro2_4").fadeOut(0);
+	
+	$("img.intro3_1").fadeOut(0);
+	$("img.intro3_2").fadeOut(0);
+	$("img.intro3_3").fadeOut(0);
+	$("img.intro3_4").fadeOut(0);
 	
 	score_counter = 0;
 	
+	$(".skill1_1").fadeOut(500);	
+	$(".skill1_2").fadeOut(500);	
+	$(".skill1_3").fadeOut(500);	
+	$(".skill1_4").fadeOut(500);	
+	
+	$(".skill2_1").fadeOut(500);	
+	$(".skill2_2").fadeOut(500);	
+	$(".skill2_3").fadeOut(500);	
+	$(".skill2_4").fadeOut(500);
+	
+	$(".skill3_1").fadeOut(500);	
+	$(".skill3_2").fadeOut(500);	
+	$(".skill3_3").fadeOut(500);	
+	$(".skill3_4").fadeOut(500);	
 	
 }
 
 function game1() {
+	sel_game = 1 ;
 	$(".start_bg").fadeOut(500);
 	$(".player1").fadeIn(500);
 	$("#player_name1").fadeIn(500);
 	$(".opponent1").fadeIn(500);
 	$("#opponent_name1").fadeIn(500);
 	//$("#player_HP_value").fadeIn(500);
+	
+	$(".skill1_1").fadeIn(500);	
+	$(".skill1_2").fadeIn(500);	
+	$(".skill1_3").fadeIn(500);	
+	$(".skill1_4").fadeIn(500);	
 
 }
 function game2() {
+	sel_game = 2 ;
 	$(".start_bg").fadeOut(500);
 	$(".player2").fadeIn(500);
 	$("#player_name2").fadeIn(500);
 	$(".opponent2").fadeIn(500);
 	$("#opponent_name2").fadeIn(500);	
+	
+	$(".skill2_1").fadeIn(500);	
+	$(".skill2_2").fadeIn(500);	
+	$(".skill2_3").fadeIn(500);	
+	$(".skill2_4").fadeIn(500);	
 }
 function game3() {
+	sel_game = 3 ;
 	$(".start_bg").fadeOut(500);
 	$(".player3").fadeIn(500);
 	$("#player_name3").fadeIn(500);
 	$(".opponent3").fadeIn(500);
 	$("#opponent_name3").fadeIn(500);	
 	
-	
+	$(".skill3_1").fadeIn(500);	
+	$(".skill3_2").fadeIn(500);	
+	$(".skill3_3").fadeIn(500);	
+	$(".skill3_4").fadeIn(500);	
 
 }
 
@@ -95,7 +136,17 @@ function use_skill1()
     score_counter = score_counter + 400 ;
     $("#intro_empty").fadeIn(300);
 	setTimeout(function(){$("#intro_empty").fadeOut(300);},700);
-	setTimeout(function(){$("img.intro_1").fadeIn(0);},220);
+	if ( sel_game == 1 ) {
+		setTimeout(function(){$("img.intro1_1").fadeIn(0);},220);
+	}
+	else if ( sel_game == 2 ) {
+		setTimeout(function(){$("img.intro2_1").fadeIn(0);},220);
+		
+	}
+	else if ( sel_game == 3 ) {
+		setTimeout(function(){$("img.intro3_1").fadeIn(0);},220);	
+	}
+	
 	 
     setTimeout(function(){skill_damage(0.1)},1150);
 
@@ -123,7 +174,16 @@ function use_skill2()
 	score_counter = score_counter + 300 ;
     $("#intro_empty").fadeIn(300);
 	$("#intro_empty").fadeOut(600);
-	setTimeout(function(){$("img.intro_2").fadeIn(0);},220);
+	if ( sel_game == 1 ) {
+		setTimeout(function(){$("img.intro1_2").fadeIn(0);},220);
+	}
+	else if ( sel_game == 2 ) {
+		setTimeout(function(){$("img.intro2_2").fadeIn(0);},220);
+		
+	}
+	else if ( sel_game == 3 ) {
+		setTimeout(function(){$("img.intro3_2").fadeIn(0);},220);	
+	}
 	 
     setTimeout(function(){skill_damage(0.2)},1150);
 
@@ -151,7 +211,16 @@ function use_skill3()
 	score_counter = score_counter + 200 ;
     $("#intro_empty").fadeIn(300);
 	$("#intro_empty").fadeOut(600);
-	setTimeout(function(){$("img.intro_3").fadeIn(0);},220);
+	if ( sel_game == 1 ) {
+		setTimeout(function(){$("img.intro1_3").fadeIn(0);},220);
+	}
+	else if ( sel_game == 2 ) {
+		setTimeout(function(){$("img.intro2_3").fadeIn(0);},220);
+		
+	}
+	else if ( sel_game == 3 ) {
+		setTimeout(function(){$("img.intro3_3").fadeIn(0);},220);	
+	}
 	 
     setTimeout(function(){skill_damage(0.3)},1150);
 
@@ -179,7 +248,16 @@ function use_skill4()
 	score_counter = score_counter + 100 ;
     $("#intro_empty").fadeIn(300);
 	$("#intro_empty").fadeOut(600);
-	setTimeout(function(){$("img.intro_4").fadeIn(0);},220);
+	if ( sel_game == 1 ) {
+		setTimeout(function(){$("img.intro1_4").fadeIn(0);},220);
+	}
+	else if ( sel_game == 2 ) {
+		setTimeout(function(){$("img.intro2_4").fadeIn(0);},220);
+		
+	}
+	else if ( sel_game == 3 ) {
+		setTimeout(function(){$("img.intro3_4").fadeIn(0);},220);	
+	}
 	 
     setTimeout(function(){skill_damage(0.4)},1150);
 
@@ -325,9 +403,21 @@ function player_hp_color( cur_hp ){
 
 
 function hit_opponent () {
-	$("img.opponent").animate({right:'16%'},100);
-	$("img.opponent").animate({right:'14%'},100);
-	$("img.opponent").animate({right:'15%'},100);
+	if ( sel_game == 1 ){
+		$("img.opponent1").animate({right:'10%'},100);
+		$("img.opponent1").animate({right:'8%'},100);
+		$("img.opponent1").animate({right:'9%'},100);	
+	}
+	else if ( sel_game == 2 ){
+		$("img.opponent2").animate({right:'13%'},100);
+		$("img.opponent2").animate({right:'11%'},100);
+		$("img.opponent2").animate({right:'12%'},100);		
+	}
+	else if ( sel_game == 3 ){
+		$("img.opponent3").animate({right:'13%'},100);
+		$("img.opponent3").animate({right:'11%'},100);
+		$("img.opponent3").animate({right:'12%'},100);		
+	}
 	
 }
 
@@ -339,10 +429,20 @@ function next_intro(){
 
 function Endturn(){
 
-	$("img.intro_1").fadeOut(200);
-	$("img.intro_2").fadeOut(200);
-	$("img.intro_3").fadeOut(200);
-	$("img.intro_4").fadeOut(200);
+	$("img.intro1_1").fadeOut(200);
+	$("img.intro1_2").fadeOut(200);
+	$("img.intro1_3").fadeOut(200);
+	$("img.intro1_4").fadeOut(200);
+	
+	$("img.intro2_1").fadeOut(200);
+	$("img.intro2_2").fadeOut(200);
+	$("img.intro2_3").fadeOut(200);
+	$("img.intro2_4").fadeOut(200);
+	
+	$("img.intro3_1").fadeOut(200);
+	$("img.intro3_2").fadeOut(200);
+	$("img.intro3_3").fadeOut(200);
+	$("img.intro3_4").fadeOut(200);
 	
 }
 

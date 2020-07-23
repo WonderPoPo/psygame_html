@@ -75,9 +75,9 @@ img{
 
 .player1{
 position: absolute;
-bottom:28%;
-left:12% ;
-width : 40% ; 
+bottom:30%;
+left:9% ;
+width : 43% ; 
 display:none;
 }
 .player2{
@@ -95,11 +95,18 @@ width : 40% ;
 display:none;
 }
 
-
-.opponent1,.opponent2,.opponent3{
+.opponent1{
 position: absolute;
-bottom:60%;
-right:14% ;
+bottom:57%;
+right:9% ;
+width : 30% ; 
+display:none;
+}
+
+.opponent2,.opponent3{
+position: absolute;
+bottom:58%;
+right:12% ;
 width : 30% ; 
 display:none;
 }
@@ -114,38 +121,38 @@ display:none;
 
 }
 
-.skill_1{
+.skill1_1,.skill2_1,.skill3_1{
   position: absolute;
 
 left: 0px ;
 top:0px;
 width :50% ; 
 height:50% ;
-
+display:none;
 }
-.skill_2{
+.skill1_2,.skill2_2,.skill3_2{
   position: absolute;
 right:0px ;
 top:0px;
 width : 50% ; 
 height:50% ;
-
+display:none;
 }
-.skill_3{
+.skill1_3,.skill2_3,.skill3_3{
   position: absolute;
 left:0px ;
 bottom:0px;
 width : 50% ; 
 height:50% ;
-
+display:none;
 }
-.skill_4{
+.skill1_4,.skill2_4,.skill3_4{
   position: absolute;
 right:0px ;
 bottom:0px;
 width : 50% ; 
 height:50% ;
-
+display:none;
 }
 
 .attack {
@@ -183,7 +190,7 @@ z-index:30;
 display:none;
 }
 
-.intro_1, .intro_2 , .intro_3 , .intro_4 {
+.intro1_1, .intro1_2 , .intro1_3 , .intro1_4 , .intro2_1, .intro2_2 , .intro2_3 , .intro2_4 , .intro3_1, .intro3_2 , .intro3_3 , .intro3_4 {
 position: absolute;
 bottom:2.1%;
 left:2.5% ;
@@ -337,13 +344,35 @@ z-index:10;
 
 }
 
-#name{
+#company{
 	position: absolute;
-	top:40%;
-	left:37% ;
+	top:50%;
+	right:6% ;
 	width : 25% ; 
 	height:5%;
-	z-index:10;
+	z-index:250;
+	font-size:28px;
+
+}
+
+#name{
+	position: absolute;
+	top:60%;
+	right:6% ;
+	width : 25% ; 
+	height:5%;
+	z-index:250;
+	font-size:28px;
+
+}
+
+#phonenum{
+	position: absolute;
+	top:70%;
+	right:6% ;
+	width : 25% ; 
+	height:5%;
+	z-index:250;
 	font-size:28px;
 
 }
@@ -354,7 +383,7 @@ z-index:10;
 	left:37.5% ;
 	width : 25% ; 
 
-	z-index:10;
+	z-index:250;
 	background:    #76a5af;
 	background:    linear-gradient(#76a5af, #3d85c6);
 	border:        1px solid #556699;
@@ -375,7 +404,7 @@ z-index:10;
 	width : 25% ; 
 
 
-	z-index:10;
+	z-index:250;
 	background:    #76a5af;
 	background:    linear-gradient(#76a5af, #3d85c6);
 	border:        1px solid #556699;
@@ -396,7 +425,7 @@ z-index:10;
 	width : 25% ; 
 
 
-	z-index:10;
+	z-index:250;
 	background:    #76a5af;
 	background:    linear-gradient(#76a5af, #3d85c6);
 	border:        1px solid #556699;
@@ -434,6 +463,96 @@ display:none ;
 }
 
 
+
+#start_bg_2{
+position: absolute;
+top:-2%;
+left:3% ;
+width : 70% ; 
+
+z-index:201;
+
+
+}
+
+#start_bg_3{
+position: absolute;
+top:15%;
+right:4% ;
+width : 35% ; 
+
+z-index:202;
+
+
+}
+
+#start_bg_4{
+position: absolute;
+top:25%;
+right:3% ;
+width : 20% ; 
+
+z-index:200;
+
+
+}
+
+#start_bg_5{
+position: absolute;
+top:30%;
+left:25% ;
+width : 50% ; 
+
+z-index:201;
+
+
+}
+
+#start_bg_6{
+position: absolute;
+top:1%;
+right:3% ;
+width : 15% ; 
+
+z-index:201;
+
+
+}
+
+#start_bg_7{
+position: absolute;
+top:49%;
+left:3% ;
+width : 25% ; 
+
+z-index:205;
+
+
+}
+
+#start_bg_8{
+position: absolute;
+bottom:1%;
+right:15% ;
+width : 30% ; 
+
+z-index:205;
+
+
+}
+
+#start_bg_9{
+position: absolute;
+top:70%;
+left:4% ;
+width : 35% ; 
+
+z-index:205;
+
+
+}
+
+
     
 </style>
 </head>
@@ -447,8 +566,18 @@ display:none ;
 
 
 <div class="start_bg">
-    <input type="text" id="name" placeholder="輸入名字" >
-    <img src="https://drive.google.com/uc?export=download&id=1KOdy73IL63umCXiOdDZhDky9I93h_ECt" width = 100% ; height=100% ;>
+    <input type="text" id="company" placeholder="醫院名字" >
+	<input type="text" id="name" placeholder="暱稱" >
+	<input type="text" id="phonenum" placeholder="電話號碼" >
+	<img id = "start_bg_2" src="https://drive.google.com/uc?export=download&id=18bjDP7b4V5HxeRpGaHNh4C4qVYkrhpe4">
+	<img id = "start_bg_3" src="https://drive.google.com/uc?export=download&id=1hPDi_PG5eO5j42cJBIEAz2vbYAnB1lDD">
+	<img id = "start_bg_4" src="https://drive.google.com/uc?export=download&id=11zFwaE1mD4RVW22HXCmK5ULdS_GUZnct">
+	<img id = "start_bg_5" src="https://drive.google.com/uc?export=download&id=1SjT5PuMGY3W4yp9dfnfwSE7YJhSLrVKv">
+	<img id = "start_bg_6" src="https://drive.google.com/uc?export=download&id=1XpE9eJ9Y-qyyR34vQK4b92dS1aqtj-4j">
+	<img id = "start_bg_7" src="https://drive.google.com/uc?export=download&id=1GSTUodQatYtDzx2XfuihV2xOtfIWfDZN">
+	<img id = "start_bg_8" src="https://drive.google.com/uc?export=download&id=10gR8XGi0Wet34VGM8De2vuti_S5TglnX">
+	<img id = "start_bg_9" src="https://drive.google.com/uc?export=download&id=1VfpewG258QQrHJjO9HJssi6RzmBqJDNF">
+    <img src="https://drive.google.com/uc?export=download&id=1_bxiwoJWPt6VwHgr8xsRYQZUD488ovSH" width = 100% ; height=100% ;>
 	<button class = "start_button1" onclick = "game1()">Colimycin</button>
 	<button class = "start_button2" onclick = "game2()">Brosym</button>
 	<button class = "start_button3" onclick = "game3()">Cubicin</button>
@@ -457,8 +586,8 @@ display:none ;
 </div>
 
 <div class="top_bckgroup" >
-	<img id = "WIN" src="https://drive.google.com/uc?export=download&id=10mPT9EHFfus47NnQ3XV7-fNk3hkpz00v" onclick = "close_game()">
-	<img id = "LOSE" src="https://drive.google.com/uc?export=download&id=10mPT9EHFfus47NnQ3XV7-fNk3hkpz00v" onclick = "close_game()">
+	<img id = "WIN" src="https://drive.google.com/uc?export=download&id=1KBn13EvI2k16zXF0KMYGyVcMWLsJ3fGc" onclick = "close_game()">
+	<img id = "LOSE" src="https://drive.google.com/uc?export=download&id=1fz0dN753XILIXXx7ts92ouwQydd5LFWQ" onclick = "close_game()">
 	
 	
 	<img class = "attack" src="https://drive.google.com/uc?export=download&id=165rowyTRQD1om2UPDVTWwchYlB7twhOX">
@@ -468,7 +597,7 @@ display:none ;
 	
     <img class = "player1" src="https://drive.google.com/uc?export=download&id=1fhMJ-_4JtdAMTQbR3x09jPTZjup32Lnk">
 	<img class = "player2" src="https://drive.google.com/uc?export=download&id=1VU6NSlUFbmyCdiF1xhpPofFQB0itg5bI">
-	<img class = "player3" src="https://drive.google.com/uc?export=download&id=1RxyGHooI9ZZVobkSSkTzpB7BIUBEcmUu">
+	<img class = "player3" src="https://drive.google.com/uc?export=download&id=1NXvLB3O8nPwmuGAkpjukUN7P-MJtm-3D">
     <div class = "player_info">
 
 	    <div  id="player_HP_value" ></div>
@@ -495,24 +624,56 @@ display:none ;
 	
 	
 	<div id = "intro_empty"  onclick = "next_intro()"> </div>
-	<img class = "intro_1" src="https://drive.google.com/uc?export=download&id=1rAZsR2lcLjLZrZv7_M1_9KVDa8vVmvFl" onclick = "Endturn()" >
-	<img class = "intro_2" src="https://drive.google.com/uc?export=download&id=132B6OcPe66Sxd4Q6FP8Ct_9_-7Usn6RK" onclick = "Endturn()" >
-	<img class = "intro_3" src="https://drive.google.com/uc?export=download&id=1_TIIxgTims5lB824MXfTssh0vLyayV5w" onclick = "Endturn()" >
-	<img class = "intro_4" src="https://drive.google.com/uc?export=download&id=1pQ7ajqHZOcCpa7NW74WV03yex_BMx2h_" onclick = "Endturn()" >
+	<img class = "intro1_1" src="https://drive.google.com/uc?export=download&id=1vZRnXWn11Bt7kyiIK2Bo4J7bRdbkm1-j" onclick = "Endturn()" >
+	<img class = "intro1_2" src="https://drive.google.com/uc?export=download&id=1viOI1TrJlCMhrCKWy6FmyYw4iSRWNB6X" onclick = "Endturn()" >
+	<img class = "intro1_3" src="https://drive.google.com/uc?export=download&id=14f5TVgI7XaJP1Rhby4ly9XFtK2lB1InU" onclick = "Endturn()" >
+	<img class = "intro1_4" src="https://drive.google.com/uc?export=download&id=1uOMOYduAK1iv7tEczJQUfDtLOkLAn0Hv" onclick = "Endturn()" >
+	<img class = "intro2_1" src="https://drive.google.com/uc?export=download&id=1KmpioIAt4pXWHrYi8X_LMtM2mfHiC_nt" onclick = "Endturn()" >
+	<img class = "intro2_2" src="https://drive.google.com/uc?export=download&id=1imS8zXyTnVfpQE7xrpapDAQlhIobIaSR" onclick = "Endturn()" >
+	<img class = "intro2_3" src="https://drive.google.com/uc?export=download&id=1pdepl8B6jwk9WPhpg8ZDeKGaO_VQ_eao" onclick = "Endturn()" >
+	<img class = "intro2_4" src="https://drive.google.com/uc?export=download&id=175a5ShaTDqlkpDKt7IQ8eD1Pj6b5bI__" onclick = "Endturn()" >
+	<img class = "intro3_1" src="https://drive.google.com/uc?export=download&id=1vBzQVGIPkdQypzOq68SfE8ba7retGsxE" onclick = "Endturn()" >
+	<img class = "intro3_2" src="https://drive.google.com/uc?export=download&id=1eq0QR3JKa3P1cyXflT6wkTotTRfpVsK6" onclick = "Endturn()" >
+	<img class = "intro3_3" src="https://drive.google.com/uc?export=download&id=1qVEdG2YMtLZ85skHPzixgxSWz-hauoi3" onclick = "Endturn()" >
+	<img class = "intro3_4" src="https://drive.google.com/uc?export=download&id=11nscGoMTV6fzL1jai4m8Kk3qwADo8xN6" onclick = "Endturn()" >
 	
 	<div class = "skill_block" >
 	    
-		<div class = "skill_1" onclick = "use_skill1()">	
-		    <img  src="https://drive.google.com/uc?export=download&id=1DZKTRZkbIQWbqexYP0CHHQ-2r1Y6OOz7" width = 100% ; height=100% ;>
+		<div class = "skill1_1" onclick = "use_skill1()">	
+		    <img  src="https://drive.google.com/uc?export=download&id=1TiIk1yjPcFxkCiZIDBrwUTYU7gpvPhlZ" width = 100% ; height=100% ;>
 		</div>
-		<div class = "skill_2" onclick = "use_skill2()">
-		    <img  src="https://drive.google.com/uc?export=download&id=13_yv6PKMVb5iHNvnIGn5MTvAgEt7PSdN" width = 100% ; height=100% ;>
+		<div class = "skill1_2" onclick = "use_skill2()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1YpxS2Tqmb-pPtT4qxJL1jxSN8ObuC3Gj" width = 100% ; height=100% ;>
 		</div>
-		<div class = "skill_3" onclick = "use_skill3()">
-		    <img  src="https://drive.google.com/uc?export=download&id=1p7NPfHMgMkeFQnXS4_uvgYkUPDNNPwXs" width = 100% ; height=100% ;>
+		<div class = "skill1_3" onclick = "use_skill3()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1jvAiP4IXjGtDEQeAYcfFsQaygwaBRiTa" width = 100% ; height=100% ;>
 		</div>
-		<div class = "skill_4" onclick = "use_skill4()">
-		    <img  src="https://drive.google.com/uc?export=download&id=1lh020a1HdcKjsasbqIMhK2YR5q3RkwR2" width = 100% ; height=100% ;>
+		<div class = "skill1_4" onclick = "use_skill4()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1wJ-Pyt1Bbieyj1GvGSV58P0fOx-UcO7t" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill2_1" onclick = "use_skill1()">	
+		    <img  src="https://drive.google.com/uc?export=download&id=1wocCBossAozSq7McE-IctZ9FgMMOjPHj" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill2_2" onclick = "use_skill2()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1p4TiRg-6K243zFRebvcgoBrK8pthI5mh" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill2_3" onclick = "use_skill3()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1dy8DsDIXDDVV8O4rnTEAiAHgnwdawb98" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill2_4" onclick = "use_skill4()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1KaNDoQEYYaqUElFRYhVKCRnbg2L5ieqo" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill3_1" onclick = "use_skill1()">	
+		    <img  src="https://drive.google.com/uc?export=download&id=1MewpSFN9XMdBKsSZT2gFO80X0JL4VXQt" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill3_2" onclick = "use_skill2()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1-_zo1C07SMgMLfxXYtyG2SdF3SJEZTBT" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill3_3" onclick = "use_skill3()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1AefVbs8EoflPQoE-5azHrHGUTMCgGqb3" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill3_4" onclick = "use_skill4()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1WC1BX7S8RxIWuVT4RFpUTCzgW3q_Q4s_" width = 100% ; height=100% ;>
 		</div>
 	</div>
 
