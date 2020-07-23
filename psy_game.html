@@ -344,9 +344,9 @@ z-index:10;
 
 #company{
 	position: absolute;
-	top:52%;
-	right:6% ;
-	width : 25% ; 
+	top:55%;
+	left:10% ;
+	width : 20% ; 
 	height:5%;
 	z-index:250;
 	font-size:28px;
@@ -355,9 +355,9 @@ z-index:10;
 
 #name{
 	position: absolute;
-	top:67%;
-	right:6% ;
-	width : 25% ; 
+	top:55%;
+	left:40% ;
+	width : 20% ; 
 	height:5%;
 	z-index:250;
 	font-size:28px;
@@ -366,9 +366,9 @@ z-index:10;
 
 #phonenum{
 	position: absolute;
-	top:82%;
-	right:6% ;
-	width : 25% ; 
+	top:55%;
+	right:10% ;
+	width : 20% ; 
 	height:5%;
 	z-index:250;
 	font-size:28px;
@@ -377,65 +377,45 @@ z-index:10;
 
 .start_button1 {
 	position: absolute;
-	top:50%;
-	left:36.5% ;
-	width : 27% ; 
+	top:45%;
+	left:10% ;
+	width : 20% ; 
+	height : 8% ;
 
 
 	z-index:250;
-	background:    #76a5af;
-	background:    linear-gradient(#76a5af, #3d85c6);
-	border:        1px solid #556699;
 	border-radius: 1000px;
-	box-shadow:    0 4px #444444;
-	padding:       20px 45px;
-	color:         #ffffff;
-	display:       inline-block;
-	font:          normal bold 26px/1 "Open Sans", sans-serif;
-	text-align:    center;
-	font-family: Trebuchet MS;
+	border-width:2px;
+	border-color:#000000;
+	border-style: solid;
 
   }
   .start_button2 {
 	position: absolute;
-	top:65%;
-	left:36.5% ;
-	width : 27% ; 
-
+	top:45%;
+	left:40% ;
+	width : 20% ; 
+    height : 8% ;
 
 	z-index:250;
-	background:    #76a5af;
-	background:    linear-gradient(#76a5af, #3d85c6);
-	border:        1px solid #556699;
 	border-radius: 1000px;
-	box-shadow:    0 4px #444444;
-	padding:       20px 45px;
-	color:         #ffffff;
-	display:       inline-block;
-	font:          normal bold 26px/1 "Open Sans", sans-serif;
-	text-align:    center;
-	font-family: Trebuchet MS;
+	border-width:2px;
+	border-color:#000000;
+	border-style: solid;
 
   }
   .start_button3 {
 	position: absolute;
-	top:80%;
-	left:36.5% ;
-	width : 27% ; 
-
+	top:45%;
+	right:10% ;
+	width : 20% ; 
+    height : 8% ;
 
 	z-index:250;
-	background:    #76a5af;
-	background:    linear-gradient(#76a5af, #3d85c6);
-	border:        1px solid #556699;
 	border-radius: 1000px;
-	box-shadow:    0 4px #444444;
-	padding:       20px 45px;
-	color:         #ffffff;
-	display:       inline-block;
-	font:          normal bold 26px/1 "Open Sans", sans-serif;
-	text-align:    center;
-	font-family: Trebuchet MS;
+	border-width:2px;
+	border-color:#000000;
+	border-style: solid;
 
   }
   
@@ -573,7 +553,66 @@ z-index:205;
 
 }
 
+#index_player_1{
+position: absolute;
+bottom:5%;
+left:18% ;
+width : 20% ; 
 
+z-index:205;
+
+}
+
+#index_player_2{
+position: absolute;
+bottom:2%;
+left:4% ;
+width : 25% ; 
+
+z-index:205;
+
+}
+
+#index_player_3{
+position: absolute;
+bottom:4%;
+left:30% ;
+width : 20% ; 
+
+z-index:205;
+
+}
+
+
+#index_opponent_1{
+position: absolute;
+bottom:5%;
+right:18% ;
+width : 20% ; 
+
+z-index:205;
+
+}
+
+#index_opponent_2{
+position: absolute;
+bottom:2%;
+right:2.5% ;
+width : 25% ; 
+
+z-index:205;
+
+}
+
+#index_opponent_3{
+position: absolute;
+bottom:4%;
+right:30% ;
+width : 20% ; 
+
+z-index:205;
+
+}
 
     
 </style>
@@ -602,9 +641,17 @@ z-index:205;
 	
 	
     <img src="https://drive.google.com/uc?export=download&id=1_bxiwoJWPt6VwHgr8xsRYQZUD488ovSH" width = 100% ; height=100% ;>
-	<button class = "start_button1" onclick = "game1()">Colimycin</button>
-	<button class = "start_button2" onclick = "game2()">Brosym</button>
-	<button class = "start_button3" onclick = "game3()">Cubicin</button>
+	<img class = "start_button1" src="https://drive.google.com/uc?export=download&id=1RKf3dxMyQbV7CiSd5SU46nM0DbGOjsZF" onclick = "game1()">
+	<img class = "start_button2" src="https://drive.google.com/uc?export=download&id=1tlDWJX0g0ci6mlPNf-9Cy8SZ7_yNzS1p" onclick = "game2()">
+	<img class = "start_button3" src="https://drive.google.com/uc?export=download&id=1KK0abQB34JamUKgSlJencq50ZrwWVbb4" onclick = "game3()">
+	
+	<img id = "index_player_1" src="https://drive.google.com/uc?export=download&id=1fhMJ-_4JtdAMTQbR3x09jPTZjup32Lnk">
+	<img id = "index_player_2" src="https://drive.google.com/uc?export=download&id=1NXvLB3O8nPwmuGAkpjukUN7P-MJtm-3D">
+	<img id = "index_player_3" src="https://drive.google.com/uc?export=download&id=1RxyGHooI9ZZVobkSSkTzpB7BIUBEcmUu">
+	
+	<img id = "index_opponent_1" src="https://drive.google.com/uc?export=download&id=17KVdJSLVfuEVFcqdNB_NOrA1NXJW30ya">
+	<img id = "index_opponent_2" src="https://drive.google.com/uc?export=download&id=1ayV45aTmUfDU0M4oR_ZLBiFvhG_d2uVO">
+	<img id = "index_opponent_3" src="https://drive.google.com/uc?export=download&id=1F-7QwJ7M4Cxa8c104behtG69gb7y4gTt">
 	
 	
 </div>
