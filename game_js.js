@@ -16,9 +16,9 @@ audioDom2.volume = 1.0;
 
 var audioDom3 = document.getElementById("audio_Attack1");
 audioDom3.volume = 0.65;
-var audioDom4 = document.getElementById("audio_Attack2");
+var audioDom4 = document.getElementById("audio_Attack3");
 audioDom4.volume = 0.65;
-var audioDom5 = document.getElementById("audio_Attack3");
+var audioDom5 = document.getElementById("audio_Attack2");
 audioDom5.volume = 0.65;
 
 
