@@ -14,6 +14,14 @@ audioDom1.volume = 0.65;
 var audioDom2 = document.getElementById("audio_Win");
 audioDom2.volume = 1.0; 
 
+var audioDom3 = document.getElementById("audio_Attack1");
+audioDom3.volume = 0.65;
+var audioDom4 = document.getElementById("audio_Attack2");
+audioDom4.volume = 0.65;
+var audioDom5 = document.getElementById("audio_Attack3");
+audioDom5.volume = 0.65;
+
+
 var score_counter = 0
 var sel_game = 0
 
@@ -137,13 +145,16 @@ function use_skill1()
     $("#intro_empty").fadeIn(300);
 	setTimeout(function(){$("#intro_empty").fadeOut(300);},700);
 	if ( sel_game == 1 ) {
+		setTimeout(function(){audioDom3.play();},1000);
 		setTimeout(function(){$("img.intro1_1").fadeIn(0);},220);
 	}
 	else if ( sel_game == 2 ) {
+		setTimeout(function(){audioDom4.play();},800);
 		setTimeout(function(){$("img.intro2_1").fadeIn(0);},220);
 		
 	}
 	else if ( sel_game == 3 ) {
+		setTimeout(function(){audioDom5.play();},100);
 		setTimeout(function(){$("img.intro3_1").fadeIn(0);},220);	
 	}
 	
@@ -175,13 +186,16 @@ function use_skill2()
     $("#intro_empty").fadeIn(300);
 	$("#intro_empty").fadeOut(600);
 	if ( sel_game == 1 ) {
+		setTimeout(function(){audioDom3.play();},1000);
 		setTimeout(function(){$("img.intro1_2").fadeIn(0);},220);
 	}
 	else if ( sel_game == 2 ) {
+		setTimeout(function(){audioDom4.play();},800);
 		setTimeout(function(){$("img.intro2_2").fadeIn(0);},220);
 		
 	}
 	else if ( sel_game == 3 ) {
+		setTimeout(function(){audioDom5.play();},100);
 		setTimeout(function(){$("img.intro3_2").fadeIn(0);},220);	
 	}
 	 
@@ -212,13 +226,16 @@ function use_skill3()
     $("#intro_empty").fadeIn(300);
 	$("#intro_empty").fadeOut(600);
 	if ( sel_game == 1 ) {
+		setTimeout(function(){audioDom3.play();},1000);
 		setTimeout(function(){$("img.intro1_3").fadeIn(0);},220);
 	}
 	else if ( sel_game == 2 ) {
+		setTimeout(function(){audioDom4.play();},800);
 		setTimeout(function(){$("img.intro2_3").fadeIn(0);},220);
 		
 	}
 	else if ( sel_game == 3 ) {
+		setTimeout(function(){audioDom5.play();},100);
 		setTimeout(function(){$("img.intro3_3").fadeIn(0);},220);	
 	}
 	 
@@ -249,13 +266,16 @@ function use_skill4()
     $("#intro_empty").fadeIn(300);
 	$("#intro_empty").fadeOut(600);
 	if ( sel_game == 1 ) {
+		setTimeout(function(){audioDom3.play();},1000);
 		setTimeout(function(){$("img.intro1_4").fadeIn(0);},220);
 	}
 	else if ( sel_game == 2 ) {
+		setTimeout(function(){audioDom4.play();},800);
 		setTimeout(function(){$("img.intro2_4").fadeIn(0);},220);
 		
 	}
 	else if ( sel_game == 3 ) {
+		setTimeout(function(){audioDom5.play();},100);
 		setTimeout(function(){$("img.intro3_4").fadeIn(0);},220);	
 	}
 	 
