@@ -22,15 +22,21 @@ var audioDom5 = document.getElementById("audio_Attack2");
 audioDom5.volume = 0.65;
 
 
+var host_value = document.getElementById("company");
+var name_value = document.getElementById("name");
+var phone_value = document.getElementById("phonenum");
 var score_counter = 0
 var sel_game = 0
 
 $( "*" ).on('click', function(){	
+  
+
 	audioDom.play();
 
 });
 
 function close_game() {
+	send_score_api();
 	$(".start_bg").fadeIn(500);
 	$(".End_bg").fadeOut(500);
 	$("#WIN").fadeOut(500);
@@ -143,18 +149,19 @@ function use_skill1()
 
     score_counter = score_counter + 400 ;
     $("#intro_empty").fadeIn(300);
-	setTimeout(function(){$("#intro_empty").fadeOut(300);},700);
+	$("#intro_empty").fadeOut(600);
+	player_attack();
 	if ( sel_game == 1 ) {
 		setTimeout(function(){audioDom3.play();},1000);
 		setTimeout(function(){$("img.intro1_1").fadeIn(0);},220);
 	}
 	else if ( sel_game == 2 ) {
-		setTimeout(function(){audioDom4.play();},800);
+		setTimeout(function(){audioDom4.play();},100);
 		setTimeout(function(){$("img.intro2_1").fadeIn(0);},220);
 		
 	}
 	else if ( sel_game == 3 ) {
-		setTimeout(function(){audioDom5.play();},100);
+		setTimeout(function(){audioDom5.play();},800);
 		setTimeout(function(){$("img.intro3_1").fadeIn(0);},220);	
 	}
 	
@@ -185,17 +192,18 @@ function use_skill2()
 	score_counter = score_counter + 300 ;
     $("#intro_empty").fadeIn(300);
 	$("#intro_empty").fadeOut(600);
+	player_attack();
 	if ( sel_game == 1 ) {
 		setTimeout(function(){audioDom3.play();},1000);
 		setTimeout(function(){$("img.intro1_2").fadeIn(0);},220);
 	}
 	else if ( sel_game == 2 ) {
-		setTimeout(function(){audioDom4.play();},800);
+		setTimeout(function(){audioDom4.play();},100);
 		setTimeout(function(){$("img.intro2_2").fadeIn(0);},220);
 		
 	}
 	else if ( sel_game == 3 ) {
-		setTimeout(function(){audioDom5.play();},100);
+		setTimeout(function(){audioDom5.play();},800);
 		setTimeout(function(){$("img.intro3_2").fadeIn(0);},220);	
 	}
 	 
@@ -225,17 +233,18 @@ function use_skill3()
 	score_counter = score_counter + 200 ;
     $("#intro_empty").fadeIn(300);
 	$("#intro_empty").fadeOut(600);
+	player_attack();
 	if ( sel_game == 1 ) {
 		setTimeout(function(){audioDom3.play();},1000);
 		setTimeout(function(){$("img.intro1_3").fadeIn(0);},220);
 	}
 	else if ( sel_game == 2 ) {
-		setTimeout(function(){audioDom4.play();},800);
+		setTimeout(function(){audioDom4.play();},100);
 		setTimeout(function(){$("img.intro2_3").fadeIn(0);},220);
 		
 	}
 	else if ( sel_game == 3 ) {
-		setTimeout(function(){audioDom5.play();},100);
+		setTimeout(function(){audioDom5.play();},800);
 		setTimeout(function(){$("img.intro3_3").fadeIn(0);},220);	
 	}
 	 
@@ -265,17 +274,18 @@ function use_skill4()
 	score_counter = score_counter + 100 ;
     $("#intro_empty").fadeIn(300);
 	$("#intro_empty").fadeOut(600);
+	player_attack();
 	if ( sel_game == 1 ) {
 		setTimeout(function(){audioDom3.play();},1000);
 		setTimeout(function(){$("img.intro1_4").fadeIn(0);},220);
 	}
 	else if ( sel_game == 2 ) {
-		setTimeout(function(){audioDom4.play();},800);
+		setTimeout(function(){audioDom4.play();},100);
 		setTimeout(function(){$("img.intro2_4").fadeIn(0);},220);
 		
 	}
 	else if ( sel_game == 3 ) {
-		setTimeout(function(){audioDom5.play();},100);
+		setTimeout(function(){audioDom5.play();},800);
 		setTimeout(function(){$("img.intro3_4").fadeIn(0);},220);	
 	}
 	 
@@ -327,11 +337,12 @@ function win_func(){
 	var gg =  document.getElementById("name");
 	console.log(gg.value)
 	console.log(score_counter)
+	send_score_api();
 	
 }
 
 function lose_func(){
-	
+	send_score_api();
 	
 }
 
@@ -421,6 +432,26 @@ function player_hp_color( cur_hp ){
 }
 
 
+function player_attack () {
+	if ( sel_game == 1 ){
+		$("img.player1").animate({left:'12%'},100);
+		//$("img.player1").animate({left:'8%'},100);
+		setTimeout(function(){$("img.player1").animate({left:'9%'},100);},1400);
+	}
+	else if ( sel_game == 2 ){
+		$("img.player2").animate({left:'13%'},100);
+		//$("img.player2").animate({left:'9%'},100);
+		setTimeout(function(){$("img.player2").animate({left:'10%'},100);	},1400);
+			
+	}
+	else if ( sel_game == 3 ){
+		$("img.player3").animate({left:'15%'},100);
+		//$("img.player3").animate({left:'11%'},100);
+		setTimeout(function(){$("img.player3").animate({left:'12%'},100);},1400);
+				
+	}
+	
+}
 
 function hit_opponent () {
 	if ( sel_game == 1 ){
@@ -466,8 +497,45 @@ function Endturn(){
 	
 }
 
+async  function send_score_api(  )
+{
+	console.log(host_value.value) ;
+	console.log(name_value.value) ;
+	console.log(phone_value.value) ;
+	console.log(score_counter);
+	console.log(new Date());
+    data = { 'name': String(name_value.value),
+			  'timestamp': String(new Date()),
+			  'score': parseInt(score_counter),
+			  'phone_num': String(phone_value.value),
+			  'host_name': String(host_value.value) } ;
+    const url = 'https://11a1gc6r7c.execute-api.ap-southeast-1.amazonaws.com/DemoDay/59a10e6f61a586e069070e0efb803d77ce0e497f' ;
+    await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: new Headers({
+            'User-agent' : 'Mozilla/4.0 Custom User Agent',
+            'Content-Type': 'application/json',
+			'x-api-key' : 'CJzmxf3Qr476gb0BBVaZ74mO1hSp3f293IROQGMR'
+        })
+    }).then(function(response) {
+        if (response.status !== 200) {
+            console.log('Looks like there was a problem. Status Code: ' +
+            response.status);
+            return;
+        }
 
+      // Examine the text in the response
+        response.json().then( function(data){
+			console.log( data );
+            for( item of data )
+                console.log( item );
+        });
 
+    }).catch(function(err) {
+        console.log('Fetch Error :-S', err);
+    });
+}
 
 
 
