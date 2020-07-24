@@ -1,0 +1,770 @@
+<!DOCTYPE html> 
+<html>
+<body>
+<head>
+
+<style>
+
+body {
+    margin:0px;
+
+}
+
+.top_bckgroup{
+  position: absolute;
+
+  width:100% ;
+  height:100%;
+  background-color: pink;
+
+  
+  top: 0;  
+  bottom: 0;  
+  left: 0;  
+  right: 0; 
+  margin: auto;
+
+  
+
+
+}
+
+.start_bg{
+  position: absolute;
+
+  width:100% ;
+  height:100%;
+  background-color: pink;
+
+  
+  top: 0;  
+  bottom: 0;  
+  left: 0;  
+  right: 0; 
+  margin: auto;
+
+  z-index:200;
+
+}
+
+.End_bg{
+  position: absolute;
+
+  width:100% ;
+  height:100%;
+  background-color: pink;
+  max-width:30cm;
+  min-width:22cm;
+  
+  top: 0;  
+  bottom: 0;  
+  left: 0;  
+  right: 0; 
+  margin: auto;
+  opacity: 0;
+  z-index:400;
+  display:none;
+
+}
+
+img{
+  position: absolute;
+}
+
+.player1{
+position: absolute;
+bottom:30%;
+left:9% ;
+width : 43% ; 
+display:none;
+}
+.player2{
+position: absolute;
+bottom:28%;
+left:10% ;
+width : 42% ; 
+display:none;
+}
+.player3{
+position: absolute;
+bottom:28%;
+left:12% ;
+width : 40% ; 
+display:none;
+}
+
+.opponent1{
+position: absolute;
+bottom:57%;
+right:9% ;
+width : 30% ; 
+display:none;
+}
+
+.opponent2,.opponent3{
+position: absolute;
+bottom:58%;
+right:12% ;
+width : 30% ; 
+display:none;
+}
+
+.close_game{
+	position: absolute;
+
+	right: 2% ;
+	top:2%;
+	width :10% ; 
+	z-index:20;
+
+}
+
+.skill1_1,.skill2_1,.skill3_1{
+  position: absolute;
+
+left: 0px ;
+top:0px;
+width :50% ; 
+height:50% ;
+display:none;
+}
+.skill1_2,.skill2_2,.skill3_2{
+  position: absolute;
+right:0px ;
+top:0px;
+width : 50% ; 
+height:50% ;
+display:none;
+}
+.skill1_3,.skill2_3,.skill3_3{
+  position: absolute;
+left:0px ;
+bottom:0px;
+width : 50% ; 
+height:50% ;
+display:none;
+}
+.skill1_4,.skill2_4,.skill3_4{
+  position: absolute;
+right:0px ;
+bottom:0px;
+width : 50% ; 
+height:50% ;
+display:none;
+}
+
+.attack {
+  position: absolute;
+left:34% ;
+top:14%;
+width : 30% ; 
+height:50%;
+z-index:100;
+display:none;
+
+}
+
+.skill_block{
+position: absolute;
+bottom:2.1%;
+left:2.5% ;
+width : 95% ; 
+height:19.1% ;
+background-color:#FFFFFF ;
+
+
+
+}
+
+
+#intro_empty {
+position: absolute;
+bottom:2.1%;
+left:2.5% ;
+width : 95% ; 
+height:19.1% ;
+background-color:#FFFFFF ;
+z-index:30;
+display:none;
+}
+
+.intro1_1, .intro1_2 , .intro1_3 , .intro1_4 , .intro2_1, .intro2_2 , .intro2_3 , .intro2_4 , .intro3_1, .intro3_2 , .intro3_3 , .intro3_4 {
+position: absolute;
+bottom:2.1%;
+left:2.5% ;
+width : 95% ; 
+height:19.1% ;
+background-color:#FFFFFF ;
+z-index:29;
+display:none;
+}
+
+.words{
+    position: absolute;
+    color : #FFFFFF;
+    font-size:  160%;
+    font-weight:bold;
+
+
+	font-family:Microsoft JhengHei;
+	width : 80% ; 
+    height:100% ;
+	left: 10%;
+	
+}
+.player_info{
+position: absolute;
+bottom:21%;
+right:3.1% ;
+width : 36.3% ; 
+height:19.1% ;
+
+z-index:10;
+}
+
+#player_HP{
+position: absolute;
+top:45%;
+right:12% ;
+width : 68% ; 
+height : 15% ; 
+z-index:15;
+border-radius: 15px ;
+
+}
+
+
+
+#player_HP_value{
+position: absolute;
+top:45%;
+right:12% ;
+width : 68% ; 
+height : 15% ; 
+z-index:15;
+border-radius: 14px ;
+background-color:#4cc844 ;
+}
+
+.opponent_info{
+position: absolute;
+top:5%;
+left:3.1% ;
+width : 35% ; 
+height:19.1% ;
+z-index:10;
+}
+
+
+
+#opponent_HP{
+position: absolute;
+top:45%;
+right:17% ;
+width : 72% ; 
+height : 15% ; 
+z-index:15;
+border-radius: 15px ;
+}
+
+#opponent_HP_value{
+position: absolute;
+top:45%;
+right:17% ;
+width : 72% ; 
+height : 15% ; 
+z-index:15;
+border-radius: 14px ;
+background-color:#4cc844 ;
+}
+
+#opponent_name1,#opponent_name2,#opponent_name3{
+position: absolute;
+top:23%;
+left:10% ;
+width : 35% ; 
+height:19.1% ;
+z-index:10;
+display:none;
+}
+
+#player_name3,#player_name2{
+position: absolute;
+top:22%;
+left:13% ;
+width : 36.3% ; 
+height:21.1% ;
+
+z-index:10;
+display:none;
+
+}
+
+#player_name1{
+position: absolute;
+top:22%;
+left:16% ;
+width : 36.3% ; 
+height:21.1% ;
+
+z-index:10;
+display:none;
+}
+
+#start_1{
+position: absolute;
+top:50%;
+left:16% ;
+width : 25% ; 
+height:10% ;
+
+z-index:10;
+
+}
+#start_2{
+position: absolute;
+top:60%;
+left:16% ;
+width : 25% ; 
+height:10% ;
+
+z-index:10;
+
+}
+#start_3{
+position: absolute;
+top:70%;
+left:16% ;
+width : 25% ; 
+height:10% ;
+
+z-index:10;
+
+}
+
+#company{
+	position: absolute;
+	top:55%;
+	left:10% ;
+	width : 20% ; 
+	height:5%;
+	z-index:250;
+	font-size:28px;
+
+}
+
+#name{
+	position: absolute;
+	top:55%;
+	left:40% ;
+	width : 20% ; 
+	height:5%;
+	z-index:250;
+	font-size:28px;
+
+}
+
+#phonenum{
+	position: absolute;
+	top:55%;
+	right:10% ;
+	width : 20% ; 
+	height:5%;
+	z-index:250;
+	font-size:28px;
+
+}
+
+.start_button1 {
+	position: absolute;
+	top:45%;
+	left:10% ;
+	width : 20% ; 
+	height : 8% ;
+
+
+	z-index:250;
+	border-radius: 1000px;
+	border-width:2px;
+	border-color:#000000;
+	border-style: solid;
+
+  }
+  .start_button2 {
+	position: absolute;
+	top:45%;
+	left:40% ;
+	width : 20% ; 
+    height : 8% ;
+
+	z-index:250;
+	border-radius: 1000px;
+	border-width:2px;
+	border-color:#000000;
+	border-style: solid;
+
+  }
+  .start_button3 {
+	position: absolute;
+	top:45%;
+	right:10% ;
+	width : 20% ; 
+    height : 8% ;
+
+	z-index:250;
+	border-radius: 1000px;
+	border-width:2px;
+	border-color:#000000;
+	border-style: solid;
+
+  }
+  
+
+#WIN{
+position: absolute;
+top:25%;
+left:25% ;
+width : 50% ; 
+height:50%;
+z-index:401;
+display:none ;
+
+}
+
+#LOSE{
+position: absolute;
+top:25%;
+left:25% ;
+width : 50% ; 
+height:50%;
+z-index:401;
+display:none ;
+}
+
+
+
+#start_bg_2{
+position: absolute;
+top:0%;
+left:3% ;
+width : 70% ; 
+
+z-index:201;
+
+
+}
+
+#start_bg_3{
+position: absolute;
+top:25%;
+right:20% ;
+width : 35% ; 
+
+z-index:202;
+
+
+}
+
+#start_bg_4{
+position: absolute;
+top:25%;
+right:3% ;
+width : 20% ; 
+
+z-index:200;
+
+
+}
+
+#start_bg_5{
+position: absolute;
+top:30%;
+left:25% ;
+width : 50% ; 
+
+z-index:201;
+
+
+}
+
+#start_bg_6{
+position: absolute;
+top:1%;
+right:3% ;
+width : 15% ; 
+
+z-index:201;
+
+
+}
+
+#start_bg_7{
+position: absolute;
+top:49%;
+left:3% ;
+width : 25% ; 
+
+z-index:205;
+
+
+}
+
+#start_bg_8{
+position: absolute;
+bottom:1%;
+right:15% ;
+width : 30% ; 
+
+z-index:205;
+
+
+}
+
+#start_bg_9{
+position: absolute;
+top:70%;
+left:4% ;
+width : 300px ; 
+
+z-index:205;
+
+
+}
+
+#main_view_size{
+
+  position: absolute;
+
+  width:768px ;
+  height:680px;
+  background-color: pink;
+
+  
+  
+  
+  top: 0;  
+  bottom: 0;  
+  left: 0;  
+  right: 0; 
+  margin: auto;
+
+  
+
+
+}
+
+#index_player_1{
+position: absolute;
+bottom:5%;
+left:18% ;
+width : 20% ; 
+
+z-index:205;
+
+}
+
+#index_player_2{
+position: absolute;
+bottom:2%;
+left:4% ;
+width : 25% ; 
+
+z-index:205;
+
+}
+
+#index_player_3{
+position: absolute;
+bottom:4%;
+left:30% ;
+width : 20% ; 
+
+z-index:205;
+
+}
+
+
+#index_opponent_1{
+position: absolute;
+bottom:5%;
+right:18% ;
+width : 20% ; 
+
+z-index:205;
+
+}
+
+#index_opponent_2{
+position: absolute;
+bottom:2%;
+right:2.5% ;
+width : 25% ; 
+
+z-index:205;
+
+}
+
+#index_opponent_3{
+position: absolute;
+bottom:4%;
+right:30% ;
+width : 20% ; 
+
+z-index:205;
+
+}
+
+    
+</style>
+</head>
+
+<audio src="BGM.mp3" id="audio_BGM" loop="true" volume="0.1" ></audio>
+<audio src="Attack.mp3" id="audio_Attack" ></audio>
+<audio src="Attack1.mp3" id="audio_Attack1" ></audio>
+<audio src="Attack2.mp3" id="audio_Attack2" ></audio>
+<audio src="Attack3.mp3" id="audio_Attack3" ></audio>
+<audio src="Win.mp3" id="audio_Win" ></audio>
+
+
+<div id="main_view_size">
+<div class="End_bg" ></div>
+
+
+
+<div class="start_bg">
+    <input type="text" id="company" placeholder="醫院" >
+	<input type="text" id="name" placeholder="姓名" >
+	<input type="text" id="phonenum" placeholder="聯絡電話" >
+	<img id = "start_bg_2" src="https://drive.google.com/uc?export=download&id=18bjDP7b4V5HxeRpGaHNh4C4qVYkrhpe4">
+	<img id = "start_bg_3" src="https://drive.google.com/uc?export=download&id=1hPDi_PG5eO5j42cJBIEAz2vbYAnB1lDD">
+	<img id = "start_bg_4" src="https://drive.google.com/uc?export=download&id=11zFwaE1mD4RVW22HXCmK5ULdS_GUZnct">
+	
+	
+    <img src="https://drive.google.com/uc?export=download&id=1_bxiwoJWPt6VwHgr8xsRYQZUD488ovSH" width = 100% ; height=100% ;>
+	<img class = "start_button1" src="~/picfile/logo1.jpg" onclick = "game1()">
+	<img class = "start_button2" src="https://drive.google.com/uc?export=download&id=1tlDWJX0g0ci6mlPNf-9Cy8SZ7_yNzS1p" onclick = "game2()">
+	<img class = "start_button3" src="https://drive.google.com/uc?export=download&id=1KK0abQB34JamUKgSlJencq50ZrwWVbb4" onclick = "game3()">
+	
+	<img id = "index_player_1" src="https://drive.google.com/uc?export=download&id=1fhMJ-_4JtdAMTQbR3x09jPTZjup32Lnk">
+	<img id = "index_player_2" src="https://drive.google.com/uc?export=download&id=1NXvLB3O8nPwmuGAkpjukUN7P-MJtm-3D">
+	<img id = "index_player_3" src="https://drive.google.com/uc?export=download&id=1RxyGHooI9ZZVobkSSkTzpB7BIUBEcmUu">
+	
+	<img id = "index_opponent_1" src="https://drive.google.com/uc?export=download&id=17KVdJSLVfuEVFcqdNB_NOrA1NXJW30ya">
+	<img id = "index_opponent_2" src="https://drive.google.com/uc?export=download&id=1ayV45aTmUfDU0M4oR_ZLBiFvhG_d2uVO">
+	<img id = "index_opponent_3" src="https://drive.google.com/uc?export=download&id=1F-7QwJ7M4Cxa8c104behtG69gb7y4gTt">
+	
+	
+</div>
+
+<div class="top_bckgroup" >
+	<img id = "WIN" src="https://drive.google.com/uc?export=download&id=1KBn13EvI2k16zXF0KMYGyVcMWLsJ3fGc" onclick = "close_game()">
+	<img id = "LOSE" src="https://drive.google.com/uc?export=download&id=1fz0dN753XILIXXx7ts92ouwQydd5LFWQ" onclick = "close_game()">
+	
+	
+	<img class = "attack" src="https://drive.google.com/uc?export=download&id=165rowyTRQD1om2UPDVTWwchYlB7twhOX">
+	<img class = "close_game" src="https://drive.google.com/uc?export=download&id=1GmAW8n9Hk6CqI_tr7EjevuM1oF1FOuv_"  onclick = "close_game()">
+	<img src="https://drive.google.com/uc?export=download&id=1wZ69uZv4Rr4ImfCo1lvl3lMtdPImligs" width = 100% ; height=100% ;>  
+
+	
+    <img class = "player1" src="https://drive.google.com/uc?export=download&id=1fhMJ-_4JtdAMTQbR3x09jPTZjup32Lnk">
+	<img class = "player2" src="https://drive.google.com/uc?export=download&id=1NXvLB3O8nPwmuGAkpjukUN7P-MJtm-3D">
+	<img class = "player3" src="https://drive.google.com/uc?export=download&id=1RxyGHooI9ZZVobkSSkTzpB7BIUBEcmUu">
+    <div class = "player_info">
+
+	    <div  id="player_HP_value" ></div>
+		<img id = "player_name1" src="https://drive.google.com/uc?export=download&id=1bUP_59jMrdYaWm_Om4_T2h04U7wEmcvi" >
+		<img id = "player_name2" src="https://drive.google.com/uc?export=download&id=18JQvqRw9R_mj0E5uQTSOAE2mZ3ArN0Np" >
+		<img id = "player_name3" src="https://drive.google.com/uc?export=download&id=1ubp-oHTvpw26A5i_VMliKZH7tTmINxmE" >
+	    <img id = "player_HP" src="https://drive.google.com/uc?export=download&id=18IUJ69vzVkt4CPRuk1CyDnG0MKPV2ron" >
+	    <img src="https://drive.google.com/uc?export=download&id=1c7-m2KYPqSgGZ4BlxD-OlSPsWrkaXcQj" width = 100% ; height=100% ;>
+	</div>
+	
+	
+    <img class = "opponent1" src="https://drive.google.com/uc?export=download&id=17KVdJSLVfuEVFcqdNB_NOrA1NXJW30ya">
+	<img class = "opponent2" src="https://drive.google.com/uc?export=download&id=1ayV45aTmUfDU0M4oR_ZLBiFvhG_d2uVO">
+	<img class = "opponent3" src="https://drive.google.com/uc?export=download&id=1F-7QwJ7M4Cxa8c104behtG69gb7y4gTt">
+	<div class = "opponent_info">
+
+		<div  id="opponent_HP_value" ></div>		
+	    <img id = "opponent_name1" src="https://drive.google.com/uc?export=download&id=1cOPJIUkJnUe8D2WK1orYZMGqB6k_P3My" >
+		<img id = "opponent_name2" src="https://drive.google.com/uc?export=download&id=1VbidsaiXuCkc71TPBT3Q1_3phaGlVR3J" >
+		<img id = "opponent_name3" src="https://drive.google.com/uc?export=download&id=1Qz4CSFFtY3kThD9zu98I6DiwaAjwzAl8" >
+		<img id = "opponent_HP" src="https://drive.google.com/uc?export=download&id=18IUJ69vzVkt4CPRuk1CyDnG0MKPV2ron" >
+	    <img src="https://drive.google.com/uc?export=download&id=1MW2PRMekIEMFGW97q51ry79ZEcx5gmKK" width = 100% ; height=100% ; >
+	</div>
+	
+	
+	<div id = "intro_empty"  onclick = "next_intro()"> </div>
+	<img class = "intro1_1" src="https://drive.google.com/uc?export=download&id=1vZRnXWn11Bt7kyiIK2Bo4J7bRdbkm1-j" onclick = "Endturn()" >
+	<img class = "intro1_2" src="https://drive.google.com/uc?export=download&id=1viOI1TrJlCMhrCKWy6FmyYw4iSRWNB6X" onclick = "Endturn()" >
+	<img class = "intro1_3" src="https://drive.google.com/uc?export=download&id=14f5TVgI7XaJP1Rhby4ly9XFtK2lB1InU" onclick = "Endturn()" >
+	<img class = "intro1_4" src="https://drive.google.com/uc?export=download&id=1uOMOYduAK1iv7tEczJQUfDtLOkLAn0Hv" onclick = "Endturn()" >
+	<img class = "intro2_1" src="https://drive.google.com/uc?export=download&id=1KmpioIAt4pXWHrYi8X_LMtM2mfHiC_nt" onclick = "Endturn()" >
+	<img class = "intro2_2" src="https://drive.google.com/uc?export=download&id=1imS8zXyTnVfpQE7xrpapDAQlhIobIaSR" onclick = "Endturn()" >
+	<img class = "intro2_3" src="https://drive.google.com/uc?export=download&id=1pdepl8B6jwk9WPhpg8ZDeKGaO_VQ_eao" onclick = "Endturn()" >
+	<img class = "intro2_4" src="https://drive.google.com/uc?export=download&id=175a5ShaTDqlkpDKt7IQ8eD1Pj6b5bI__" onclick = "Endturn()" >
+	<img class = "intro3_1" src="https://drive.google.com/uc?export=download&id=1vBzQVGIPkdQypzOq68SfE8ba7retGsxE" onclick = "Endturn()" >
+	<img class = "intro3_2" src="https://drive.google.com/uc?export=download&id=1eq0QR3JKa3P1cyXflT6wkTotTRfpVsK6" onclick = "Endturn()" >
+	<img class = "intro3_3" src="https://drive.google.com/uc?export=download&id=1qVEdG2YMtLZ85skHPzixgxSWz-hauoi3" onclick = "Endturn()" >
+	<img class = "intro3_4" src="https://drive.google.com/uc?export=download&id=11nscGoMTV6fzL1jai4m8Kk3qwADo8xN6" onclick = "Endturn()" >
+	
+	<div class = "skill_block" >
+	    
+		<div class = "skill1_1" onclick = "use_skill1()">	
+		    <img  src="https://drive.google.com/uc?export=download&id=1TiIk1yjPcFxkCiZIDBrwUTYU7gpvPhlZ" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill1_2" onclick = "use_skill2()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1YpxS2Tqmb-pPtT4qxJL1jxSN8ObuC3Gj" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill1_3" onclick = "use_skill3()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1jvAiP4IXjGtDEQeAYcfFsQaygwaBRiTa" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill1_4" onclick = "use_skill4()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1wJ-Pyt1Bbieyj1GvGSV58P0fOx-UcO7t" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill2_1" onclick = "use_skill1()">	
+		    <img  src="https://drive.google.com/uc?export=download&id=1wocCBossAozSq7McE-IctZ9FgMMOjPHj" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill2_2" onclick = "use_skill2()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1p4TiRg-6K243zFRebvcgoBrK8pthI5mh" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill2_3" onclick = "use_skill3()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1dy8DsDIXDDVV8O4rnTEAiAHgnwdawb98" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill2_4" onclick = "use_skill4()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1KaNDoQEYYaqUElFRYhVKCRnbg2L5ieqo" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill3_1" onclick = "use_skill1()">	
+		    <img  src="https://drive.google.com/uc?export=download&id=1MewpSFN9XMdBKsSZT2gFO80X0JL4VXQt" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill3_2" onclick = "use_skill2()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1-_zo1C07SMgMLfxXYtyG2SdF3SJEZTBT" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill3_3" onclick = "use_skill3()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1AefVbs8EoflPQoE-5azHrHGUTMCgGqb3" width = 100% ; height=100% ;>
+		</div>
+		<div class = "skill3_4" onclick = "use_skill4()">
+		    <img  src="https://drive.google.com/uc?export=download&id=1WC1BX7S8RxIWuVT4RFpUTCzgW3q_Q4s_" width = 100% ; height=100% ;>
+		</div>
+	</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="background1" >
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+<script type="text/javascript" src="game_js.js"></script>
+</body>
+
+</html>
